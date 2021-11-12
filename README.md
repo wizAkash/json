@@ -1,5 +1,15 @@
 # json powerDB a project to link a student form to a server Database
-### This project is created in order to understand the basic CRUD operations of json powerDB
+
+## This project is created in order to link a students details to a specific json database.
+
+### Benefits of using JsonDB
+1. Simplest way to retrieve data in a JSON format.
+2. Schema-free, Simple to use, Nimble and In-Memory database.
+3. It is built on top of one of the fastest and real-time data indexing engine - PowerIndeX.
+4. It is low level (raw) form of data and is also human readable.
+5. It helps developers in faster coding, in-turn reduces development cost.
+
+
 ##### The Put Command:
 It is is an IML(Index manipulation) Command. It reads the record and puts/Insert them into the JasonDB.
 1. It needs token that is connection token of the database where you wand to add the details for the new student. 
