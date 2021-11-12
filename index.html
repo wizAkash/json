@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="http://login2explore.com/jpdb/resources/js/0.0.3/jpdb-commons.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Vertical (basic) form</h2>
+            <form id="empForm" method="post">
+                <div class="form-group">
+                    <span><label for="stuId">Student ID:</label> <label id="empIdMsg"></label></span>
+                    <input type="text" class="form-control" name="stuId" id="empIdMsg" placeholder="Enter student ID" required>
+                </div>
+                <div class="form-group">
+                    <label for="stuName">Student Name:</label>
+                    <input type="text" class="form-control" id="stuName"placeholder="Enter Student Name" name="stuName">
+                </div>
+                <div class="form-group">
+                    <label for="stuEmail">Student Email:</label>
+                    <input type="email" class="form-control" id="stuEmail"placeholder="Enter Student Email" name="stuEmail">
+                </div>
+                <div class="form-group">
+                    <label for="stuMobile">Student Mobile:</label>
+                    <input type="number" class="form-control" id="stuMobile" placeholder="Enter Student mobile number" name="stuMobile">
+                </div>
+                <div class=""form-group">
+                    <label for="stuSub">Subject Selection:</label>
+                    <input type="text" class="form-control" id="stuSub" placeholder="Enter subject selected" name="stuSub">
+                </div>
+                <input type="button" class="btn btn-primary" id="empSave" value="Save"onclick="saveEmployee();">
+            </form>
+        </div>
+        <script>
+            function validateAndGetFormData() {
+                var stuIdVar = $("#stuId").val();
+                if (stuIdVar === "") {
+                    alert("Student ID Required Value");
+                    $("#stuId").focus();
+                    return "";
+                }
+                var stuNameVar = $("#stuName").val();
+                if (stuNameVar === "") {
+                    alert("Student Name is Required Value");
+                    $("#stuName").focus();
+                    return "";
+                }
+                var stuEmailVar = $("#stuEmail").val();
+                if (stuEmailVar === "") {
+                    alert("Employee Email is Required Value");
+                    $("#stuEmail").focus();
+                    return "";
+                }
+                var stuMobVar=$("#stuMobile").val();
+                if (stuMobVar==""){
+                    alert("Student mobile number is required");
+                    S("#stuMobile").focus();
+                    return "";
+                }
+                var stuSubVar = $("#stuSub").val();
+                if (stuSubVar === "") {
+                    alert("Subject Selection is a Required Value");
+                    $("#stuSub").focus();
+                    return "";
+                }
+                var jsonStrObj = {
+                    stuId: stuIdVar,
+                    stuName: stuNameVar,
+                    stuEmail: stuEmailVar,
+                    stuMobile: stuMobVar,
+                    stuSub: stuSubVar,
+                };
+                return JSON.stringify(jsonStrObj);
+            }
+
+            function resetForm() {
+                $("#stuId").val("");
+                $("#stuName").val("");
+                $("#stuEmail").val("");
+                $("#stuMobile").val("");
+                $("#stuSub").val("");
+                $("#stuId").focus();
+            }
+
+            function saveEmployee() {
+                var jsonStr = validateAndGetFormData();
+                if (jsonStr === "") {
+                    return;
+                }
+                var putReqStr = createPUTRequest("90938612|-31948826027903061|90944302",
+                        jsonStr, "SAMPLE", "EMP-REL");
+                alert(putReqStr);
+                jQuery.ajaxSetup({async: false});
+                var resultObj = executeCommandAtGivenBaseUrl(putReqStr, "http://api.login2explore.com:5577", "/api/iml");
+                jQuery.ajaxSetup({async: true});
+                alert(JSON.stringify(resultObj));
+                resetForm();
+            }
+        </script>
+    </body>
+</html>
