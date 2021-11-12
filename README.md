@@ -103,3 +103,62 @@ It is an IML(index manipulation) Command. It removes some certain record from th
 *We'll Create a web form and will connect it to the json db such that if some one enters the details in that form it will get reflected to the database as well.
 We'll use XMLHTTPS in order to send the respond to the jsondb through the web browser. 
 Javascript will be playing a huge role in order to write some important functions to fetch the data entered in the form and send it to the database.*
+
+## The Save student function
+This function is the heart and core of this project it basically call all other required function in order to validate data and
+transffers the record to the data base
+
+```javascript
+function saveStudent() {
+                var jsonStr = validateAndGetFormData();
+                if (jsonStr === "") {
+                    return;
+                }
+                var putReqStr = createPUTRequest("90938612|-31948826027903061|90944302",
+                        jsonStr, "SAMPLE", "EMP-REL");
+                alert(putReqStr);
+                jQuery.ajaxSetup({async: false});
+                var resultObj = executeCommandAtGivenBaseUrl(putReqStr, "http://api.login2explore.com:5577", "/api/iml");
+                jQuery.ajaxSetup({async: true});
+                alert(JSON.stringify(resultObj));
+                resetForm();
+            }
+```
+
+## The validateAndGetFormData()
+This function will basically look if all the necessary details has been entered or not and if they are it will return that as a string type which will get 
+stored in the jsonStr variable. And if they are not it will return the empty string alerting the user to enter those required fields.
+
+```javascript
+function validateAndGetFormData() {
+                var stuIdVar = $("#stuId").val();
+                if (stuIdVar === "") {
+                    alert("Student ID Required Value");
+                    $("#stuId").focus();
+                    return "";
+                }
+                var stuNameVar = $("#stuName").val();
+                if (stuNameVar === "") {
+                    alert("Student Name is Required Value");
+                    $("#stuName").focus();
+                    return "";
+                }
+                var stuEmailVar = $("#stuEmail").val();
+                if (stuEmailVar === "") {
+                    alert("Employee Email is Required Value");
+                    $("#stuEmail").focus();
+                    return "";
+                }
+                var stuMobVar=$("#stuMobile").val();
+                if (stuMobVar==""){
+                    alert("Student mobile number is required");
+                    S("#stuMobile").focus();
+                    return "";
+                }
+                var stuSubVar = $("#stuSub").val();
+                if (stuSubVar === "") {
+                    alert("Subject Selection is a Required Value");
+                    $("#stuSub").focus();
+                    return "";
+                }
+```
