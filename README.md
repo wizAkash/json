@@ -1,4 +1,4 @@
-# json powerDB a project to link a student from to a server Database
+# json powerDB a project to link a student form to a server Database
 ### This project is created in order to understand the basic CRUD operations of json powerDB
 ##### The Put Command:
 It is is an IML(Index manipulation) Command. It reads the record and puts/Insert them into the JasonDB.
@@ -83,4 +83,9 @@ It is an IML(index manipulation) Command. It removes some certain record from th
     "record": 1
 }
 ```
+
+### Linking a html form to a json data base
+We'll Create a web form and will connect it to the json db such that if some one enters the details in that form it will get reflected to the database as well.
+We'll use XMLHTTPS in order to send the respond to the jsondb through the web browser. 
+Javascript will be playing a huge role in order to write some important functions to fetch the data entered in the form and send it to the database.
 
