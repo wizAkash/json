@@ -5,7 +5,7 @@
 *The main objective of this project is to create a web form which will ask for the **students details** and send them to jsonpowerdb in a specific database.
 So, It's really important to know about the jsonpowerdb.*
 
-### Benefits of using JsonDB
+### Benefits of using Json power DB
 1. Simplest way to retrieve data in a JSON format.
 2. Schema-free, Simple to use, Nimble and In-Memory database.
 3. It is built on top of one of the fastest and real-time data indexing engine - PowerIndeX.
@@ -21,7 +21,7 @@ It is is an IML(Index manipulation) Command. It reads the record and puts/Insert
 3. It needs the rel name that is the realation name where youwant to add the new records.
 4. JsonStr The actual content of that record.
 
-```
+```javascript
 {
     "token": "90938612|-31948826027903061|90944302",
     "cmd": "PUT",
@@ -98,7 +98,7 @@ It is an IML(index manipulation) Command. It removes some certain record from th
 }
 ```
 
-### Linking a html form to a json data base
+### Linking a html form to a data base
 *We'll Create a web form and will connect it to the json db such that if some one enters the details in that form it will get reflected to the database as well.
 We'll use XMLHTTPS in order to send the respond to the jsondb through the web browser. 
 Javascript will be playing a huge role in order to write some important functions to fetch the data entered in the form and send it to the database.*
