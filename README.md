@@ -2,6 +2,9 @@
 
 ## This project is created in order to link a students details to a specific json database.
 
+*The main objective of this project is to create a web form which will ask for the **students details** and send them to jsonpowerdb in a specific database.
+So, It's really important to know about the jsonpowerdb.*
+
 ### Benefits of using JsonDB
 1. Simplest way to retrieve data in a JSON format.
 2. Schema-free, Simple to use, Nimble and In-Memory database.
@@ -10,6 +13,7 @@
 5. It helps developers in faster coding, in-turn reduces development cost.
 
 
+### The CRUD operations
 ##### The Put Command:
 It is is an IML(Index manipulation) Command. It reads the record and puts/Insert them into the JasonDB.
 1. It needs token that is connection token of the database where you wand to add the details for the new student. 
@@ -95,7 +99,7 @@ It is an IML(index manipulation) Command. It removes some certain record from th
 ```
 
 ### Linking a html form to a json data base
-We'll Create a web form and will connect it to the json db such that if some one enters the details in that form it will get reflected to the database as well.
+*We'll Create a web form and will connect it to the json db such that if some one enters the details in that form it will get reflected to the database as well.
 We'll use XMLHTTPS in order to send the respond to the jsondb through the web browser. 
-Javascript will be playing a huge role in order to write some important functions to fetch the data entered in the form and send it to the database.
+Javascript will be playing a huge role in order to write some important functions to fetch the data entered in the form and send it to the database.*
 
