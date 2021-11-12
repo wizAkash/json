@@ -21,7 +21,7 @@ It is is an IML(Index manipulation) Command. It reads the record and puts/Insert
 3. It needs the rel name that is the realation name where youwant to add the new records.
 4. JsonStr The actual content of that record.
 
-```javascript
+```
 {
     "token": "90938612|-31948826027903061|90944302",
     "cmd": "PUT",
@@ -65,7 +65,8 @@ It is an IML(Index manipulation) Command. It updates any record which is already
 3. It needs the rel name that is the realation name in which you want to update the records.
 4. JsonStr It will specify that which record you want to update by taking the record number and then the updated data.
 
-```{
+```
+{
     "token": "90938612|-31948826027903061|90944302",
     "dbName": "Student",
     "cmd": "UPDATE",
@@ -103,3 +104,6 @@ It is an IML(index manipulation) Command. It removes some certain record from th
 We'll use XMLHTTPS in order to send the respond to the jsondb through the web browser. 
 Javascript will be playing a huge role in order to write some important functions to fetch the data entered in the form and send it to the database.*
 
+
+### The web form
+![The webform](IMG_20211112_202658.jpg)
