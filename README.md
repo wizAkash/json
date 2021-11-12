@@ -162,3 +162,21 @@ function validateAndGetFormData() {
                     return "";
                 }
 ```
+
+## The executeCommandAtGivenBaseUrl() function
+This function will put all the data which has been entered by the student to the database whose url has been used in the code. It will take three arguments
+the request of the data to put it on the database, the base url and ent end url. Definition of this function is available at the jsson commonjs.
+
+## The resetForm() function
+This function will will refresh the form back to empty after the successful submission of the details of the previous student.
+
+```javascript
+function resetForm() {
+                $("#stuId").val("");
+                $("#stuName").val("");
+                $("#stuEmail").val("");
+                $("#stuMobile").val("");
+                $("#stuSub").val("");
+                $("#stuId").focus();
+            }
+```
